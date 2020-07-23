@@ -35,17 +35,18 @@
             // 
             // btnShare
             // 
-            this.btnShare.Location = new System.Drawing.Point(12, 132);
+            this.btnShare.Location = new System.Drawing.Point(12, 136);
             this.btnShare.Name = "btnShare";
             this.btnShare.Size = new System.Drawing.Size(249, 37);
             this.btnShare.TabIndex = 0;
-            this.btnShare.Text = "Share";
+            this.btnShare.Text = "Compartilhar";
             this.btnShare.UseVisualStyleBackColor = true;
+            this.btnShare.Click += new System.EventHandler(this.btnShare_Click);
             // 
             // pictureBox1
             // 
             this.pictureBox1.Image = global::server.Properties.Resources.logo;
-            this.pictureBox1.Location = new System.Drawing.Point(12, 0);
+            this.pictureBox1.Location = new System.Drawing.Point(12, 3);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(249, 126);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;

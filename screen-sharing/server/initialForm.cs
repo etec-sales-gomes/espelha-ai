@@ -1,11 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Net;
 using System.Windows.Forms;
 
 namespace server
@@ -15,6 +8,25 @@ namespace server
         public initialForm()
         {
             InitializeComponent();
+        }
+
+        sendScreenSocket screenSocket;
+
+        private void btnShare_Click(object sender, System.EventArgs e)
+        {
+            string buttonText = btnShare.Text;
+            if (buttonText == "Compartilhar")
+            {
+
+                screenSocket = new sendScreenSocket(new IPEndPoint(IPAddress.Parse("192.168.0.255"), 12345));
+                screenSocket.startSender();
+                btnShare.Text = "Parar de compartilhar";
+            } 
+            else
+            {
+                screenSocket.stopSender();
+                btnShare.Text = "Compartilhar";
+            }
         }
     }
 }
