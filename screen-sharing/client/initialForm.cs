@@ -13,8 +13,16 @@ namespace client
 
         private void btnWatch_Click(object sender, EventArgs e)
         {
+            string input = txtHostname.Text.Replace(" ", "");
 
-            string address = new hostnameFinder().hostname(txtHostname.Text);
+            if (input.Length == 0)
+            {
+                MessageBox.Show("Campo: nome do computador, não pode ser vazio!");
+                return;
+            }
+
+            // HostnameFinder
+            string address = new hostnameFinder().hostname(input);
             if (address == null)
             {
                 MessageBox.Show("Computador não encontrado");

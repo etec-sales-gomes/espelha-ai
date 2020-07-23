@@ -36,6 +36,7 @@ namespace client
         {
             e.Cancel = true;
             Hide();
+            receiveScreen.pause();
             notifyIcon.Visible = true;
         }
 
@@ -46,6 +47,7 @@ namespace client
 
         private void notifyIcon_MouseDoubleClick(object sender, MouseEventArgs e)
         {
+            receiveScreen.resume();
             notifyIcon.Visible = false;
             Show();
         }

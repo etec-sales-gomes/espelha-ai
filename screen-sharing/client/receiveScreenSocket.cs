@@ -14,16 +14,15 @@ namespace client
         UdpClient listener;
         PictureBox pbox;
         Thread Listening;
+        bool status;
 
         // Método construtor
         public receiveScreenSocket(string address, int Port, PictureBox Pbox)
         {
             pbox = Pbox;
 
-
             // Old
             //listener = new UdpClient(Port);
-
 
             // Testar se funciona no laboratório
             listener = new UdpClient(new IPEndPoint(IPAddress.Parse(address), Port));
@@ -32,6 +31,7 @@ namespace client
 
         public void startListening()
         {
+            status = true;
             Listening.Start();
         }
 
@@ -40,16 +40,31 @@ namespace client
             Listening.Abort();
         }
 
+        public void pause() {
+            status = false;
+        }
+
+        public void resume()
+        {
+            status = true;
+        }
+
         private void Listener()
         {
             Task.Run(async () =>
             {
                 while (true)
                 {
-                    Thread.Sleep(1); // Resolve quebra de frame
+                    if (status)
+                    {
+                        Thread.Sleep(1); // Resolve quebra de frame
 
-                    var receivedResults = await listener.ReceiveAsync();
-                    ThreadPool.QueueUserWorkItem(new WaitCallback(getSocket), receivedResults.Buffer);
+                        var receivedResults = await listener.ReceiveAsync();
+                        ThreadPool.QueueUserWorkItem(new WaitCallback(getSocket), receivedResults.Buffer);
+                    } else
+                    {
+                        Thread.Sleep(500);
+                    }
                 }
             });
         }
