@@ -61,6 +61,7 @@
             this.btnWatch.TabIndex = 2;
             this.btnWatch.Text = "Assistir";
             this.btnWatch.UseVisualStyleBackColor = true;
+            this.btnWatch.Click += new System.EventHandler(this.btnWatch_Click);
             // 
             // btnSobre
             // 
@@ -95,6 +96,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "initialForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Espelha Aí - Cliente";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);

@@ -48,6 +48,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="hostnameFinder.cs" />
     <Compile Include="initialForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -56,6 +57,7 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="receiveScreenSocket.cs" />
     <Compile Include="watchForm.cs">
       <SubType>Form</SubType>
     </Compile>
