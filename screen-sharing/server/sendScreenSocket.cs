@@ -87,7 +87,24 @@ namespace server
         {
             MemoryStream ms = new MemoryStream();
             Bitmap bmp = new Bitmap(GrabDesktop());
-            bmp.Save(ms, ImageFormat.Jpeg);
+
+
+            // Encoder - Qualidade da imagem
+            ImageCodecInfo myImageCodecInfo;
+            System.Drawing.Imaging.Encoder myEncoder;
+            EncoderParameter myEncoderParameter;
+            EncoderParameters myEncoderParameters;
+
+            myImageCodecInfo = GetEncoderInfo("image/jpeg");
+            myEncoder = System.Drawing.Imaging.Encoder.Quality;
+            myEncoderParameters = new EncoderParameters(1);
+
+            myEncoderParameter = new EncoderParameter(myEncoder, 75L);
+            myEncoderParameters.Param[0] = myEncoderParameter;
+            bmp.Save(ms, myImageCodecInfo, myEncoderParameters);
+
+
+            //bmp.Save(ms, ImageFormat.Jpeg);
 
             // Server connect
             server.Connect(endpoint);
@@ -147,6 +164,19 @@ namespace server
             {
                 Console.WriteLine("Exception: " + err.Message);
             }
+        }
+
+        private static ImageCodecInfo GetEncoderInfo(String mimeType)
+        {
+            int j;
+            ImageCodecInfo[] encoders;
+            encoders = ImageCodecInfo.GetImageEncoders();
+            for (j = 0; j < encoders.Length; ++j)
+            {
+                if (encoders[j].MimeType == mimeType)
+                    return encoders[j];
+            }
+            return null;
         }
     }
 }

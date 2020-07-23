@@ -32,7 +32,6 @@ namespace client
 
         public void startListening()
         {
-            MessageBox.Show("Entrando");
             Listening.Start();
         }
 
