@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Diagnostics;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace client
@@ -55,6 +56,32 @@ namespace client
         private void sairToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Process.GetCurrentProcess().Kill();
+        }
+
+        private void screenShotToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            SaveImage(@"C: \Users\Veera\Desktop\myImage.bmp");
+        }
+
+        public void SaveImage(string path)
+        {
+            Image img = pbImageReceive.Image;
+
+            if (img != null)
+            {
+                SaveFileDialog sf = new SaveFileDialog();
+                sf.Filter = "JPG(*.JPG)|*.jpg";
+                if (sf.ShowDialog() == DialogResult.OK)
+                {
+                    img.Save(sf.FileName);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Parece que não tem uma imagem para salvar :/");
+            }
+
+
         }
     }
 }

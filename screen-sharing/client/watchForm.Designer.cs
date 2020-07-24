@@ -65,6 +65,7 @@
             this.screenShotToolStripMenuItem.Name = "screenShotToolStripMenuItem";
             this.screenShotToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
             this.screenShotToolStripMenuItem.Text = "Print";
+            this.screenShotToolStripMenuItem.Click += new System.EventHandler(this.screenShotToolStripMenuItem_Click);
             // 
             // sairToolStripMenuItem
             // 

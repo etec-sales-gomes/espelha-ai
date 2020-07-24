@@ -16,9 +16,12 @@ namespace server
         Thread senderThread;
         IPEndPoint endpoint;
         Socket server;
+        int quality;
+        bool state;
 
-        public sendScreenSocket(IPEndPoint Endpoint)
+        public sendScreenSocket(IPEndPoint Endpoint, int Quality)
         {
+            quality = Quality;
             endpoint = Endpoint;
             server = new Socket(AddressFamily.InterNetwork, SocketType.Dgram, ProtocolType.Udp);
             senderThread = new Thread(sender);
@@ -26,12 +29,24 @@ namespace server
 
         public void startSender()
         {
+            state = true;
             senderThread.Start();
         }
 
         public void stopSender()
         {
+            state = false;
             senderThread.Abort();
+        }
+
+        public bool getState()
+        {
+            return state;
+        }
+
+        public void setQuality(int Quality)
+        {
+            quality = Quality;
         }
 
         public void sender()
@@ -99,7 +114,7 @@ namespace server
             myEncoder = System.Drawing.Imaging.Encoder.Quality;
             myEncoderParameters = new EncoderParameters(1);
 
-            myEncoderParameter = new EncoderParameter(myEncoder, 25L);
+            myEncoderParameter = new EncoderParameter(myEncoder, quality);
             myEncoderParameters.Param[0] = myEncoderParameter;
             bmp.Save(ms, myImageCodecInfo, myEncoderParameters);
 

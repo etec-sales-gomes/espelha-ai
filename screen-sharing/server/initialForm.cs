@@ -1,4 +1,5 @@
-﻿using System.Net;
+﻿using System;
+using System.Net;
 using System.Windows.Forms;
 
 namespace server
@@ -20,7 +21,7 @@ namespace server
             if (buttonText == "Compartilhar")
             {
 
-                screenSocket = new sendScreenSocket(new IPEndPoint(IPAddress.Parse("192.168.0.255"), int.Parse(port)));
+                screenSocket = new sendScreenSocket(new IPEndPoint(IPAddress.Parse("192.168.0.255"), int.Parse(port)), Convert.ToInt32(nQuality.Value));
                 screenSocket.startSender();
                 btnShare.Text = "Parar de compartilhar";
             } 
@@ -28,6 +29,14 @@ namespace server
             {
                 screenSocket.stopSender();
                 btnShare.Text = "Compartilhar";
+            }
+        }
+
+        private void nQuality_ValueChanged(object sender, System.EventArgs e)
+        {
+            if(screenSocket.getState() == true)
+            {
+                screenSocket.setQuality(Convert.ToInt32(nQuality.Value));
             }
         }
     }
