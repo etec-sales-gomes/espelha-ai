@@ -30,15 +30,17 @@
         {
             this.btnShare = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.nPort = new System.Windows.Forms.NumericUpDown();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nPort)).BeginInit();
             this.SuspendLayout();
             // 
             // btnShare
             // 
-            this.btnShare.Location = new System.Drawing.Point(12, 136);
+            this.btnShare.Location = new System.Drawing.Point(12, 176);
             this.btnShare.Name = "btnShare";
             this.btnShare.Size = new System.Drawing.Size(249, 37);
-            this.btnShare.TabIndex = 0;
+            this.btnShare.TabIndex = 1;
             this.btnShare.Text = "Compartilhar";
             this.btnShare.UseVisualStyleBackColor = true;
             this.btnShare.Click += new System.EventHandler(this.btnShare_Click);
@@ -53,11 +55,40 @@
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
             // 
+            // nPort
+            // 
+            this.nPort.Increment = new decimal(new int[] {
+            10,
+            0,
+            0,
+            0});
+            this.nPort.Location = new System.Drawing.Point(12, 149);
+            this.nPort.Maximum = new decimal(new int[] {
+            99999,
+            0,
+            0,
+            0});
+            this.nPort.Minimum = new decimal(new int[] {
+            22555,
+            0,
+            0,
+            0});
+            this.nPort.Name = "nPort";
+            this.nPort.Size = new System.Drawing.Size(249, 20);
+            this.nPort.TabIndex = 0;
+            this.nPort.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.nPort.Value = new decimal(new int[] {
+            22555,
+            0,
+            0,
+            0});
+            // 
             // initialForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(273, 181);
+            this.ClientSize = new System.Drawing.Size(273, 225);
+            this.Controls.Add(this.nPort);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btnShare);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
@@ -67,6 +98,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Espelha Aí - Servidor";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nPort)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -75,6 +107,7 @@
 
         private System.Windows.Forms.Button btnShare;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.NumericUpDown nPort;
     }
 }
 

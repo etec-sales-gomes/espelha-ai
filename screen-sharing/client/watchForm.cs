@@ -7,21 +7,21 @@ namespace client
     public partial class watchForm : Form
     {
         receiveScreenSocket receiveScreen;
-        string Address;
+        int Port;
 
-        public watchForm(string address, string hostname)
+        public watchForm(int port)
         {
-            Address = address;
+            Port = port;
 
             InitializeComponent();
-            this.Text = "Assistindo tela de: " + hostname;
+            this.Text = "Assistindo porta: " + port;
             notifyIcon.Visible = false;
             notifyIcon.ContextMenu = new ContextMenu(new MenuItem[] { new MenuItem("Exit", Exit) });
         }
 
         private void watchForm_Load(object sender, EventArgs e)
         {
-            receiveScreen = new receiveScreenSocket(Address, 12345, pbImageReceive);
+            receiveScreen = new receiveScreenSocket(Port, pbImageReceive);
             receiveScreen.startListening();
         }
 

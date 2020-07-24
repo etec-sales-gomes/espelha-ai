@@ -16,7 +16,7 @@ namespace client
         bool status;
 
         // Método construtor
-        public receiveScreenSocket(string address, int Port, PictureBox Pbox)
+        public receiveScreenSocket(int Port, PictureBox Pbox)
         {
             pbox = Pbox;
 

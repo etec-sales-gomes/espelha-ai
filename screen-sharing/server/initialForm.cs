@@ -14,11 +14,13 @@ namespace server
 
         private void btnShare_Click(object sender, System.EventArgs e)
         {
+            string port = nPort.Value.ToString();
+
             string buttonText = btnShare.Text;
             if (buttonText == "Compartilhar")
             {
 
-                screenSocket = new sendScreenSocket(new IPEndPoint(IPAddress.Parse("192.168.0.255"), 12345));
+                screenSocket = new sendScreenSocket(new IPEndPoint(IPAddress.Parse("192.168.0.255"), int.Parse(port)));
                 screenSocket.startSender();
                 btnShare.Text = "Parar de compartilhar";
             } 

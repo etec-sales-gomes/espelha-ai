@@ -13,25 +13,23 @@ namespace client
 
         private void btnWatch_Click(object sender, EventArgs e)
         {
-            string input = txtHostname.Text.Replace(" ", "");
+            string port = nPort.Value.ToString();
 
-            if (input.Length == 0)
+            if (port.Length == 0)
             {
-                MessageBox.Show("Campo: nome do computador, não pode ser vazio!");
+                MessageBox.Show("Campo: Porta, não pode ser vazio!");
                 return;
             }
 
-            // HostnameFinder
-            string address = new hostnameFinder().hostname(input);
-            if (address == null)
-            {
-                MessageBox.Show("Computador não encontrado");
-                return;
-            }
-
-            watchForm watch = new watchForm(address, txtHostname.Text);
+            watchForm watch = new watchForm(int.Parse(port));
             watch.Show();
             this.Hide();
+        }
+
+        private void btnSobre_Click(object sender, EventArgs e)
+        {
+            sobreBox box = new sobreBox();
+            box.ShowDialog();
         }
     }
 }
