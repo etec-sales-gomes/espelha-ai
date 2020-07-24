@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Drawing;
-using System.Net;
 using System.Net.Sockets;
 using System.Text;
 using System.Threading;
@@ -21,11 +20,7 @@ namespace client
         {
             pbox = Pbox;
 
-            // Old
-            //listener = new UdpClient(Port);
-
-            // Testar se funciona no laboratório
-            listener = new UdpClient(new IPEndPoint(IPAddress.Parse(address), Port));
+            listener = new UdpClient(Port);
             Listening = new Thread(Listener);
         }
 
@@ -40,7 +35,8 @@ namespace client
             Listening.Abort();
         }
 
-        public void pause() {
+        public void pause()
+        {
             status = false;
         }
 
@@ -61,7 +57,8 @@ namespace client
 
                         var receivedResults = await listener.ReceiveAsync();
                         ThreadPool.QueueUserWorkItem(new WaitCallback(getSocket), receivedResults.Buffer);
-                    } else
+                    }
+                    else
                     {
                         Thread.Sleep(500);
                     }

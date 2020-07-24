@@ -89,7 +89,7 @@ namespace server
             Bitmap bmp = new Bitmap(GrabDesktop());
 
 
-            // Encoder - Qualidade da imagem
+            // Encoder - Image quality
             ImageCodecInfo myImageCodecInfo;
             System.Drawing.Imaging.Encoder myEncoder;
             EncoderParameter myEncoderParameter;
@@ -99,11 +99,11 @@ namespace server
             myEncoder = System.Drawing.Imaging.Encoder.Quality;
             myEncoderParameters = new EncoderParameters(1);
 
-            myEncoderParameter = new EncoderParameter(myEncoder, 75L);
+            myEncoderParameter = new EncoderParameter(myEncoder, 25L);
             myEncoderParameters.Param[0] = myEncoderParameter;
             bmp.Save(ms, myImageCodecInfo, myEncoderParameters);
 
-
+            // Without encoder
             //bmp.Save(ms, ImageFormat.Jpeg);
 
             // Server connect
