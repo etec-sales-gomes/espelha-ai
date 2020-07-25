@@ -45,7 +45,10 @@ namespace server
 
         private void initialForm_FormClosing(object sender, FormClosingEventArgs e)
         {
-            screenSocket.stopSender();
+            if (screenSocket != null)
+            {
+                screenSocket.stopSender();
+            }
         }
     }
 }

@@ -40,17 +40,17 @@
             // lblHostname
             // 
             this.lblHostname.AutoSize = true;
-            this.lblHostname.Location = new System.Drawing.Point(120, 122);
+            this.lblHostname.Location = new System.Drawing.Point(12, 147);
             this.lblHostname.Name = "lblHostname";
-            this.lblHostname.Size = new System.Drawing.Size(32, 13);
+            this.lblHostname.Size = new System.Drawing.Size(35, 13);
             this.lblHostname.TabIndex = 1;
-            this.lblHostname.Text = "Porta";
+            this.lblHostname.Text = "Porta:";
             // 
             // btnWatch
             // 
-            this.btnWatch.Location = new System.Drawing.Point(12, 167);
+            this.btnWatch.Location = new System.Drawing.Point(12, 172);
             this.btnWatch.Name = "btnWatch";
-            this.btnWatch.Size = new System.Drawing.Size(247, 34);
+            this.btnWatch.Size = new System.Drawing.Size(210, 34);
             this.btnWatch.TabIndex = 1;
             this.btnWatch.Text = "Assistir";
             this.btnWatch.UseVisualStyleBackColor = true;
@@ -58,9 +58,9 @@
             // 
             // btnSobre
             // 
-            this.btnSobre.Location = new System.Drawing.Point(12, 231);
+            this.btnSobre.Location = new System.Drawing.Point(12, 234);
             this.btnSobre.Name = "btnSobre";
-            this.btnSobre.Size = new System.Drawing.Size(247, 34);
+            this.btnSobre.Size = new System.Drawing.Size(210, 24);
             this.btnSobre.TabIndex = 2;
             this.btnSobre.Text = "Sobre";
             this.btnSobre.UseVisualStyleBackColor = true;
@@ -71,7 +71,7 @@
             this.pictureBox1.Image = global::client.Properties.Resources.logo;
             this.pictureBox1.Location = new System.Drawing.Point(12, 12);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(247, 111);
+            this.pictureBox1.Size = new System.Drawing.Size(210, 111);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 4;
             this.pictureBox1.TabStop = false;
@@ -83,7 +83,7 @@
             0,
             0,
             0});
-            this.nPort.Location = new System.Drawing.Point(12, 140);
+            this.nPort.Location = new System.Drawing.Point(53, 145);
             this.nPort.Maximum = new decimal(new int[] {
             99999,
             0,
@@ -95,7 +95,7 @@
             0,
             0});
             this.nPort.Name = "nPort";
-            this.nPort.Size = new System.Drawing.Size(247, 20);
+            this.nPort.Size = new System.Drawing.Size(169, 20);
             this.nPort.TabIndex = 0;
             this.nPort.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.nPort.Value = new decimal(new int[] {
@@ -108,7 +108,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(271, 277);
+            this.ClientSize = new System.Drawing.Size(234, 270);
             this.Controls.Add(this.nPort);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btnSobre);

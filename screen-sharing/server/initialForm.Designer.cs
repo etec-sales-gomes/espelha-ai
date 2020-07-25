@@ -43,7 +43,7 @@
             // 
             this.btnShare.Location = new System.Drawing.Point(14, 235);
             this.btnShare.Name = "btnShare";
-            this.btnShare.Size = new System.Drawing.Size(234, 37);
+            this.btnShare.Size = new System.Drawing.Size(208, 37);
             this.btnShare.TabIndex = 1;
             this.btnShare.Text = "Compartilhar";
             this.btnShare.UseVisualStyleBackColor = true;
@@ -54,7 +54,7 @@
             this.pictureBox1.Image = global::server.Properties.Resources.logo;
             this.pictureBox1.Location = new System.Drawing.Point(12, 12);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(237, 140);
+            this.pictureBox1.Size = new System.Drawing.Size(210, 140);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
@@ -78,7 +78,7 @@
             0,
             0});
             this.nPort.Name = "nPort";
-            this.nPort.Size = new System.Drawing.Size(176, 20);
+            this.nPort.Size = new System.Drawing.Size(149, 20);
             this.nPort.TabIndex = 0;
             this.nPort.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.nPort.Value = new decimal(new int[] {
@@ -115,7 +115,7 @@
             0,
             0});
             this.nQuality.Name = "nQuality";
-            this.nQuality.Size = new System.Drawing.Size(176, 20);
+            this.nQuality.Size = new System.Drawing.Size(149, 20);
             this.nQuality.TabIndex = 3;
             this.nQuality.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.nQuality.Value = new decimal(new int[] {
@@ -138,7 +138,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(261, 284);
+            this.ClientSize = new System.Drawing.Size(234, 284);
             this.Controls.Add(this.lblQualidade);
             this.Controls.Add(this.nQuality);
             this.Controls.Add(this.lblPorta);

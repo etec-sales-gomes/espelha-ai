@@ -11,6 +11,7 @@ Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
+		Description = Screen sharing program
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{D40C8A08-CC8B-4F65-A33B-8DE0C1A1894B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
