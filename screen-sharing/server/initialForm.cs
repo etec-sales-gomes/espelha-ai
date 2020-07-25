@@ -16,12 +16,12 @@ namespace server
         private void btnShare_Click(object sender, System.EventArgs e)
         {
             string port = nPort.Value.ToString();
-
             string buttonText = btnShare.Text;
+
+            screenSocket = new sendScreenSocket(new IPEndPoint(IPAddress.Parse("192.168.0.255"), int.Parse(port)), Convert.ToInt32(nQuality.Value));
+
             if (buttonText == "Compartilhar")
             {
-
-                screenSocket = new sendScreenSocket(new IPEndPoint(IPAddress.Parse("192.168.0.255"), int.Parse(port)), Convert.ToInt32(nQuality.Value));
                 screenSocket.startSender();
                 btnShare.Text = "Parar de compartilhar";
             } 
@@ -34,10 +34,18 @@ namespace server
 
         private void nQuality_ValueChanged(object sender, System.EventArgs e)
         {
-            if(screenSocket.getState() == true)
+            if (screenSocket != null)
             {
-                screenSocket.setQuality(Convert.ToInt32(nQuality.Value));
+                if (screenSocket.getState() == true)
+                {
+                    screenSocket.setQuality(Convert.ToInt32(nQuality.Value));
+                }
             }
+        }
+
+        private void initialForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            screenSocket.stopSender();
         }
     }
 }

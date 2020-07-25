@@ -67,7 +67,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="hostnameFinder.cs" />
     <Compile Include="initialForm.cs">
       <SubType>Form</SubType>
     </Compile>

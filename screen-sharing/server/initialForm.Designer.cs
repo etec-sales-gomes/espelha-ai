@@ -99,13 +99,18 @@
             // nQuality
             // 
             this.nQuality.Increment = new decimal(new int[] {
-            5,
+            2,
             0,
             0,
             0});
             this.nQuality.Location = new System.Drawing.Point(73, 200);
             this.nQuality.Maximum = new decimal(new int[] {
-            85,
+            80,
+            0,
+            0,
+            0});
+            this.nQuality.Minimum = new decimal(new int[] {
+            5,
             0,
             0,
             0});
@@ -146,6 +151,7 @@
             this.Name = "initialForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Espelha Aí - Servidor";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.initialForm_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nPort)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nQuality)).EndInit();
