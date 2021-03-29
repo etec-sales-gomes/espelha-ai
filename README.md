@@ -10,7 +10,7 @@
 <p align="center">
   <img alt="License" src="https://img.shields.io/static/v1?label=license&message=MIT&color=8257E5&labelColor=000000">
   <img alt="Platform" src="https://img.shields.io/static/v1?label=platform&message=Windows&color=8257E5&labelColor=000000">
-  <img alt="Maintainer" src="https://img.shields.io/static/v1?label=maintainer&message=Otávio%20Bumaruf&color=8257E5&labelColor=000000">
+  <img alt="Maintainer" src="https://img.shields.io/static/v1?label=maintainer&message=bumaruf&color=8257E5&labelColor=000000">
 </p>
 
 ## ✨ Tecnologias
